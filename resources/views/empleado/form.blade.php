@@ -1,5 +1,5 @@
 Formulario que tendra datos en comun con create y edit
-
+<h1>{{ $modo }} empleado</h1>
 
 <label for="Nombre">Nombre</label>
 <input type="text" name="Nombre" value="{{ isset($empleado->Nombre) ? $empleado->Nombre : '' }}" id="Nombre">
@@ -19,6 +19,9 @@ Formulario que tendra datos en comun con create y edit
     <img src="{{ asset('storage'.'/'.$empleado->Foto) }}" width="100" alt="">    
 @endif
 
-<input type="file" name="Foto" value="" id="Foto">
+<input type="file" name="Foto"  id="Foto">
 <br>
-<input type="submit" value="Guardar datos">
+
+<a href="{{ url('empleado/') }}">regresar</a>
+
+<input type="submit" value="{{ $modo }} datos">
